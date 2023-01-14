@@ -1,6 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-}
+    reactStrictMode: true,
 
-module.exports = nextConfig
+    async rewrites() {
+        return [
+            {
+                source: "/api/:path*",
+                destination: "https://sakaconsulting.co.id/",
+            },
+        ];
+    },
+};
+
+module.exports = nextConfig;

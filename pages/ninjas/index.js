@@ -17,7 +17,14 @@ export const getStaticProps = async () => {
 const Ninjas = ({ninjas}) => {
     return (
         <div>
-            <h1>Ninjas</h1>
+            <div className="contentBar">
+                <div className="contentBarTitle">
+                    <h1>Ninjas</h1>
+                </div>
+                <Link href="/client/add/" className={mainStyles.btn}>
+                    Add
+                </Link>
+            </div>
             <table>
                 <thead>
                     <tr>
@@ -37,7 +44,10 @@ const Ninjas = ({ninjas}) => {
                             <td>{data.client_email_1} </td>
                             <td>{data.client_email_2} </td>
                             <td>
-                                <Link href={`/detail/${data.id}`}className={mainStyles.btn}>
+                                <Link
+                                    href={`/client/detail/${data.id}`}
+                                    className={mainStyles.btn}
+                                >
                                     Detail
                                 </Link>{" "}
                             </td>

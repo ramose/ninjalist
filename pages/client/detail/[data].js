@@ -1,4 +1,5 @@
 import {useRouter} from "next/router";
+import { useEffect } from "react";
 
 export const getServerSideProps = async ({query}) => {
 
@@ -13,6 +14,11 @@ export const getServerSideProps = async ({query}) => {
 };
 
 const ClientDetail = ({client}) => {
+
+    useEffect(() => {
+        console.log("Loading...");
+        console.log("client:",client);
+    }, [])
 
     return (
         <div>
